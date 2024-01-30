@@ -1,10 +1,10 @@
-import { usefetch } from "../Hooks/useFetch";
+import  useFetch  from "../Hooks/useFetch";
 import { useState } from "react";
 import { useEffect } from "react";
 
 const Country = (number, getCountryName) => {
   const countryName = useParams();
-  const { data, loading } = usefetch(
+  const { data, loading } = useFetch(
     `https://restcountries.com/v3.1/name/${countryName.countryName}`
   );
   const [country, setCountry] = useState(data);

@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import reducer from "./Reducers/reducer";
-import { usefetch } from "./Hooks/useFetch";
+import  useFetch  from "./Hooks/useFetch";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./Components/navBar";
@@ -19,7 +19,7 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { inputField, search, filterWord, data } = state;
 
-  const { data: fetchData } = usefetch("https://restcountries.com/v3.1/all");
+  const { data: fetchData } = useFetch("https://restcountries.com/v3.1/all");
 
   const setInputField = (value) => {
     dispatch({ type: "SET_INPUT_FIELD", payload: value });

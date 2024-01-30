@@ -1,5 +1,5 @@
 import React from "react";
-import { usefetch } from "../Hooks/useFetch";
+import useFetch  from "../Hooks/useFetch";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -9,7 +9,7 @@ const Countries = ({ filterWord, input, number }) => {
   url = input
     ? `https://restcountries.com/v3.1/region/${input}`
     : "https://restcountries.com/v3.1/all";
-  const { data, loading } = usefetch(url);
+  const { data, loading } = useFetch(url);
   const [countries, setCountries] = useState([]);
   useEffect(() => {
     if (input) {
